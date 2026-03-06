@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { analyzeInvoiceAction, saveInvoiceAction } from "@/app/invoices/actions";
+import { analyzeInvoiceAction, saveInvoiceAction } from "@/app/(dashboard)/invoices/actions";
 import { Loader2, Save, FileText, ChevronLeft, AlertTriangle, ArrowRight, Building2, Users, Upload, Edit3, Plus, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";

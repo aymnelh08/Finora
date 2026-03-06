@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
 import { Plus, Trash2, Send, CheckCircle2, Download, Link as LinkIcon, Copy } from "lucide-react";
-import { saveInvoiceAction } from "@/app/invoices/actions";
+import { saveInvoiceAction } from "@/app/(dashboard)/invoices/actions";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
