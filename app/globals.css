@@ -1,26 +1,82 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Brand Colors */
+    --color-navy: #001F54;
+    --color-jade: #00A36C;
+    --color-onyx: #0A0A0A;
+    --color-aero: #C9D6FF;
+
+    /* Semantic Mapping (Dark Mode Default per "sleek dark modes") */
+    --background: #0A0A0A;
+    /* Onyx */
+    --foreground: #ffffff;
+
+    --card: #121212;
+    /* Slightly lighter than Onyx for depth */
+    --card-foreground: #ffffff;
+
+    --popover: #0A0A0A;
+    --popover-foreground: #ffffff;
+
+    --primary: #A3C4F3;
+    /* Lightened Navy or standard Navy? Navy #001F54 is too dark for text/boundaries on Black. We'll use Aero or a tint for Primary elements on Dark? Or keep Navy as background for Primary Buttons with White Text? */
+    /* Let's keep Navy #001F54 for "Primary" semantic, but we might need to adjust for visibility. */
+    --primary: #C9D6FF;
+    /* Using Aero as Primary visual in Dark Mode makes it pop? Or use Jade? */
+    --primary-foreground: #001F54;
+
+    --secondary: #00A36C;
+    /* Jade - excellent for actions */
+    --secondary-foreground: #ffffff;
+
+    --muted: #1f1f22;
+    --muted-foreground: #9ca3af;
+
+    --accent: #001F54;
+    /* Navy as accent background? */
+    --accent-foreground: #ffffff;
+
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #C9D6FF;
+    /* Aero ring */
+
+    --radius: 0.75rem;
+    /* Modern rounded corners */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Animations */
+.animate-in {
+  animation: animateIn 0.5s ease-out forwards;
+}
+
+@keyframes animateIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
